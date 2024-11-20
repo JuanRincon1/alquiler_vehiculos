@@ -1,20 +1,23 @@
-package co.edu.umanizales.alquiler_vehiculos.service;
+package co.edu.umanizales.alquiler_vehiculos.service;// Define el paquete donde se encuentra esta clase.
 
-import co.edu.umanizales.alquiler_vehiculos.model.Usuario;
-import org.springframework.stereotype.Service;
-
+import co.edu.umanizales.alquiler_vehiculos.model.Usuario;// Importa la clase `Usuario`, que representa a un usuario del sistema.
+import org.springframework.stereotype.Service;// Importa la anotación `@Service`, que marca esta clase como un componente de servicio en Spring.
 import java.util.ArrayList;
 import java.util.List;
+// Importa las clases `ArrayList` y `List` para gestionar colecciones de usuarios.
 
-@Service
-public class UsuarioService {
+@Service// Anotación que indica que esta clase es un servicio de negocio en el contexto de Spring.
 
-    private final List<Usuario> usuarios = new ArrayList<>();
+public class UsuarioService {// Clase que contiene la lógica de negocio relacionada con la gestión de usuarios.
 
-    // Método para registrar un nuevo usuario
+
+    private final List<Usuario> usuarios = new ArrayList<>();// Lista que almacena los usuarios registrados en el sistema.
+
+
+    
     public void registrarUsuario(Usuario usuario) {
         usuarios.add(usuario);
-    }
+    }// Agrega un nuevo usuario a la lista usuarios.
 
     // Método para validar el login de un usuario
     public Usuario validarUsuario(String login, String password) {
@@ -23,12 +26,13 @@ public class UsuarioService {
                 return usuario;
             }
         }
-        return null; // Si no se encuentra el usuario, devuelve null
+        return null; // Si no se encuentra el usuario con las credenciales proporcionadas, devuelve null.
     }
 
     // Método para listar todos los usuarios registrados
     public List<Usuario> listarUsuarios() {
         return this.usuarios;
-    }
+    }// Devuelve la lista de todos los usuarios registrados en el sistema.
+
 }
 
