@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;// Importa las anotaciones de S
 
 import java.util.List;// Importa la clase `List` para manejar colecciones de vehículos.
 
-
+@CrossOrigin()
 @RestController// Marca esta clase como un controlador REST, indicando que gestionará solicitudes HTTP y retornará
 // las respuestas directamente en formato JSON o similar.
 @RequestMapping("/vehiculos")// Define la URL base para todos los endpoints de esta clase. En este caso, todas las rutas 

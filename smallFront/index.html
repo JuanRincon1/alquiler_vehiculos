@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Vehículos</title>
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        /* Estilo para el botón */
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        /* Contenedor de tabla */
+        #container {
+            margin-bottom: 20px;
+            width: 80%;
+            text-align: center;
+        }
+
+        /* Estilo para la tabla */
+        table {
+            width: 80%;
+            border-collapse: collapse;
+            margin: 0 auto;
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        caption {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #444;
+        }
+
+        thead {
+            background-color: #007BFF;
+            color: white;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        th {
+            background-color: #007BFF;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="getDisponibles()">
+        Ver Carros
+    </button>
+    <div id="container">
+        <!-- Contenedor dinámico -->
+    </div>
+    <table>
+        <caption>Lista de Vehículos</caption>
+        <thead>
+          <tr>
+            <th>Matrícula</th>
+            <th>Kilómetros</th>
+            <th>Disponible</th>
+            <th>Valor Alquiler</th>
+            <th>Color</th>
+          </tr>
+        </thead>
+        <tbody id="body-table">
+        </tbody>
+    </table>
+</body>
+<script>
+    async function getDisponibles() {
+        const container = document.getElementById("body-table");
+
+        container.innerHTML = ""
+
+        const response = await fetch("http://localhost:8080/vehiculos/disponibles");
+
+        const data = await response.json();
+
+        for (const i of data) {
+            container.innerHTML += `<tr>
+                <td>${i.matricula}</td>
+                <td>${i.km}</td>
+                <td>${i.disponible ? 'Sí' : 'No'}</td>
+                <td>${i.valorAlquiler}</td>
+                <td>${i.color}</td>
+            </tr>`;
+        }
+    }
+</script>
+</html>
