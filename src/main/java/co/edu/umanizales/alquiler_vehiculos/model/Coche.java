@@ -8,9 +8,9 @@ public class Coche extends Vehiculo {// Declara la clase `Coche`, que extiende l
 
 
     
-    public Coche(String matricula, int km, boolean disponible, double valorAlquiler, boolean extras) {// Constructor de la clase `Coche`, que inicializa tanto los atributos heredados 
+    public Coche(String matricula, int km, boolean disponible, double valorAlquiler, String color, boolean extras) {// Constructor de la clase `Coche`, que inicializa tanto los atributos heredados 
         // de `Vehiculo` como el atributo `extras`.
-        super(matricula, km, disponible, valorAlquiler); // Llama al constructor de la clase base `Vehiculo` para inicializar los 
+        super(matricula, km, disponible, valorAlquiler, color); // Llama al constructor de la clase base `Vehiculo` para inicializar los 
         // atributos heredados (`matricula`, `km`, `disponible`, y `valorAlquiler`).
         this.extras = extras;// Inicializa el atributo `extras` con el valor recibido como parámetro
     }

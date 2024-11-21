@@ -4,8 +4,8 @@ public class Moto extends Vehiculo {// Declara la clase `Moto`, que hereda de `V
     private boolean casco;// Atributo que indica si la moto incluye casco.
 
 
-    public Moto(String matricula, int km, boolean disponible, double valorAlquiler, boolean casco) {
-        super(matricula, km, disponible, valorAlquiler);
+    public Moto(String matricula, int km, boolean disponible, double valorAlquiler, String color, boolean casco) {
+        super(matricula, km, disponible, valorAlquiler, color);
         this.casco = casco;// Constructor que inicializa los atributos heredados y el atributo específico `casco`.
     }
 

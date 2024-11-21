@@ -3,8 +3,8 @@ package co.edu.umanizales.alquiler_vehiculos.model;// Define el paquete donde se
 public class Furgoneta extends Vehiculo {// Declara la clase `Furgoneta`, que hereda de `Vehiculo`.
     private short capacidad;// Atributo que representa la capacidad de carga de la furgoneta.
 
-    public Furgoneta(String matricula, int km, boolean disponible, double valorAlquiler, short capacidad) {// Constructor que inicializa los atributos heredados y específicos.
-        super(matricula, km, disponible, valorAlquiler);
+    public Furgoneta(String matricula, int km, boolean disponible, double valorAlquiler, String color, short capacidad) {// Constructor que inicializa los atributos heredados y específicos.
+        super(matricula, km, disponible, valorAlquiler, color);
         this.capacidad = capacidad;
     }
 

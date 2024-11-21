@@ -9,12 +9,14 @@ public class Vehiculo {// Clase base que representa un vehículo genérico con a
 
     public boolean disponible;// Indica si el vehículo está disponible para alquiler.
     public double valorAlquiler; // Valor base del alquiler por kilómetro.
+    public String color;
 
-    public Vehiculo(String matricula, int km, boolean disponible, double valorAlquiler) {
+    public Vehiculo(String matricula, int km, boolean disponible, double valorAlquiler, String color) {
         this.matricula = matricula;
         this.km = km;
         this.disponible = disponible;
         this.valorAlquiler = valorAlquiler;
+        this.color = color;
     }// Constructor que inicializa los atributos `matricula`, `km`, `disponible` y `valorAlquiler`.
     
     public double calcularAlquiler(int km) {
